@@ -3,10 +3,14 @@ package main
 import "fmt"
 
 const (
-	_  = iota             // 0
+	_ = iota // 0
+	// KB Kilo bytes
 	KB = 1 << (iota * 10) // 1 << (1 * 10)
+	// MB Mega bytes
 	MB = 1 << (iota * 10) // 1 << (2 * 10)
+	// GB Giga bytes
 	GB = 1 << (iota * 10) // 1 << (3 * 10)
+	// TB Tera bytes
 	TB = 1 << (iota * 10) // 1 << (4 * 10)
 )
 
