@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-func increasePrimeFactors(primeFactors []int) (int, []int) {
+var primeFactors = []int{2, 3, 5}
+
+func increasePrimeFactors() int {
 	num := primeFactors[len(primeFactors)-1]
 	for {
 		num++
@@ -15,35 +17,37 @@ func increasePrimeFactors(primeFactors []int) (int, []int) {
 		}
 		if isPrimeFactor {
 			primeFactors = append(primeFactors, num)
-			return num, primeFactors
+			return num
 		}
 	}
 }
 
-func getPrimeFactors(n int, primeFactors []int) ([]int, []int) {
+func primeFactorsIterator() func() int {
+	index := 0
+	return func() int {
+		if index >= len(primeFactors) {
+			increasePrimeFactors()
+		}
+		factor := primeFactors[index]
+		index++
+		return factor
+	}
+}
+
+func getPrimeFactors(n int) []int {
 	r := n
 	factors := []int{}
-	checkAndReduce := func(primeFactor int) bool {
+	next := primeFactorsIterator()
+	for {
+		primeFactor := next()
 		if n%primeFactor == 0 {
 			r /= primeFactor
 			factors = append(factors, primeFactor)
-			return r == 1
-		}
-		return false
-	}
-	for _, primeFactor := range primeFactors {
-		if checkAndReduce(primeFactor) {
-			return factors, primeFactors
+			if r == 1 {
+				return factors
+			}
 		}
 	}
-	primeFactor := primeFactors[len(primeFactors)-1]
-	for primeFactor < n {
-		primeFactor, primeFactors = increasePrimeFactors(primeFactors)
-		if checkAndReduce(primeFactor) {
-			return factors, primeFactors
-		}
-	}
-	return factors, primeFactors
 }
 
 func printResult(n int, factors []int) {
@@ -53,10 +57,9 @@ func printResult(n int, factors []int) {
 }
 
 func main() {
-	primeFactors := []int{2, 3, 5}
 	for _, n := range []int{13195, 600851475143} {
 		var factors []int
-		factors, primeFactors = getPrimeFactors(n, primeFactors)
+		factors = getPrimeFactors(n)
 		printResult(n, factors)
 	}
 }
