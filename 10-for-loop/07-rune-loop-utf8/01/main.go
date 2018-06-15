@@ -1,0 +1,123 @@
+package main
+
+import "fmt"
+
+func main() {
+	for i := 250; i <= 340; i++ {
+		iRune := rune(i)
+		iStr := string(i)
+		iBytes := []byte(iStr)
+		fmt.Printf("rune(%v) => %T(%v), string(%v) => %T(%v), []bytes(%v) => %T(%v)\n", i, iRune, iRune, i, iStr, iStr, iStr, iBytes, iBytes)
+	}
+	foo := "a"
+	fmt.Printf("foo => %T(%v)\n", foo, foo)
+	buz := 'a'
+	fmt.Printf("buz => %T(%v)\n", buz, buz)
+}
+
+/*
+RESULT:
+rune(250) => int32(250), string(250) => string(ú), []bytes(ú) => []uint8([195 186])
+rune(251) => int32(251), string(251) => string(û), []bytes(û) => []uint8([195 187])
+rune(252) => int32(252), string(252) => string(ü), []bytes(ü) => []uint8([195 188])
+rune(253) => int32(253), string(253) => string(ý), []bytes(ý) => []uint8([195 189])
+rune(254) => int32(254), string(254) => string(þ), []bytes(þ) => []uint8([195 190])
+rune(255) => int32(255), string(255) => string(ÿ), []bytes(ÿ) => []uint8([195 191])
+rune(256) => int32(256), string(256) => string(Ā), []bytes(Ā) => []uint8([196 128])
+rune(257) => int32(257), string(257) => string(ā), []bytes(ā) => []uint8([196 129])
+rune(258) => int32(258), string(258) => string(Ă), []bytes(Ă) => []uint8([196 130])
+rune(259) => int32(259), string(259) => string(ă), []bytes(ă) => []uint8([196 131])
+rune(260) => int32(260), string(260) => string(Ą), []bytes(Ą) => []uint8([196 132])
+rune(261) => int32(261), string(261) => string(ą), []bytes(ą) => []uint8([196 133])
+rune(262) => int32(262), string(262) => string(Ć), []bytes(Ć) => []uint8([196 134])
+rune(263) => int32(263), string(263) => string(ć), []bytes(ć) => []uint8([196 135])
+rune(264) => int32(264), string(264) => string(Ĉ), []bytes(Ĉ) => []uint8([196 136])
+rune(265) => int32(265), string(265) => string(ĉ), []bytes(ĉ) => []uint8([196 137])
+rune(266) => int32(266), string(266) => string(Ċ), []bytes(Ċ) => []uint8([196 138])
+rune(267) => int32(267), string(267) => string(ċ), []bytes(ċ) => []uint8([196 139])
+rune(268) => int32(268), string(268) => string(Č), []bytes(Č) => []uint8([196 140])
+rune(269) => int32(269), string(269) => string(č), []bytes(č) => []uint8([196 141])
+rune(270) => int32(270), string(270) => string(Ď), []bytes(Ď) => []uint8([196 142])
+rune(271) => int32(271), string(271) => string(ď), []bytes(ď) => []uint8([196 143])
+rune(272) => int32(272), string(272) => string(Đ), []bytes(Đ) => []uint8([196 144])
+rune(273) => int32(273), string(273) => string(đ), []bytes(đ) => []uint8([196 145])
+rune(274) => int32(274), string(274) => string(Ē), []bytes(Ē) => []uint8([196 146])
+rune(275) => int32(275), string(275) => string(ē), []bytes(ē) => []uint8([196 147])
+rune(276) => int32(276), string(276) => string(Ĕ), []bytes(Ĕ) => []uint8([196 148])
+rune(277) => int32(277), string(277) => string(ĕ), []bytes(ĕ) => []uint8([196 149])
+rune(278) => int32(278), string(278) => string(Ė), []bytes(Ė) => []uint8([196 150])
+rune(279) => int32(279), string(279) => string(ė), []bytes(ė) => []uint8([196 151])
+rune(280) => int32(280), string(280) => string(Ę), []bytes(Ę) => []uint8([196 152])
+rune(281) => int32(281), string(281) => string(ę), []bytes(ę) => []uint8([196 153])
+rune(282) => int32(282), string(282) => string(Ě), []bytes(Ě) => []uint8([196 154])
+rune(283) => int32(283), string(283) => string(ě), []bytes(ě) => []uint8([196 155])
+rune(284) => int32(284), string(284) => string(Ĝ), []bytes(Ĝ) => []uint8([196 156])
+rune(285) => int32(285), string(285) => string(ĝ), []bytes(ĝ) => []uint8([196 157])
+rune(286) => int32(286), string(286) => string(Ğ), []bytes(Ğ) => []uint8([196 158])
+rune(287) => int32(287), string(287) => string(ğ), []bytes(ğ) => []uint8([196 159])
+rune(288) => int32(288), string(288) => string(Ġ), []bytes(Ġ) => []uint8([196 160])
+rune(289) => int32(289), string(289) => string(ġ), []bytes(ġ) => []uint8([196 161])
+rune(290) => int32(290), string(290) => string(Ģ), []bytes(Ģ) => []uint8([196 162])
+rune(291) => int32(291), string(291) => string(ģ), []bytes(ģ) => []uint8([196 163])
+rune(292) => int32(292), string(292) => string(Ĥ), []bytes(Ĥ) => []uint8([196 164])
+rune(293) => int32(293), string(293) => string(ĥ), []bytes(ĥ) => []uint8([196 165])
+rune(294) => int32(294), string(294) => string(Ħ), []bytes(Ħ) => []uint8([196 166])
+rune(295) => int32(295), string(295) => string(ħ), []bytes(ħ) => []uint8([196 167])
+rune(296) => int32(296), string(296) => string(Ĩ), []bytes(Ĩ) => []uint8([196 168])
+rune(297) => int32(297), string(297) => string(ĩ), []bytes(ĩ) => []uint8([196 169])
+rune(298) => int32(298), string(298) => string(Ī), []bytes(Ī) => []uint8([196 170])
+rune(299) => int32(299), string(299) => string(ī), []bytes(ī) => []uint8([196 171])
+rune(300) => int32(300), string(300) => string(Ĭ), []bytes(Ĭ) => []uint8([196 172])
+rune(301) => int32(301), string(301) => string(ĭ), []bytes(ĭ) => []uint8([196 173])
+rune(302) => int32(302), string(302) => string(Į), []bytes(Į) => []uint8([196 174])
+rune(303) => int32(303), string(303) => string(į), []bytes(į) => []uint8([196 175])
+rune(304) => int32(304), string(304) => string(İ), []bytes(İ) => []uint8([196 176])
+rune(305) => int32(305), string(305) => string(ı), []bytes(ı) => []uint8([196 177])
+rune(306) => int32(306), string(306) => string(Ĳ), []bytes(Ĳ) => []uint8([196 178])
+rune(307) => int32(307), string(307) => string(ĳ), []bytes(ĳ) => []uint8([196 179])
+rune(308) => int32(308), string(308) => string(Ĵ), []bytes(Ĵ) => []uint8([196 180])
+rune(309) => int32(309), string(309) => string(ĵ), []bytes(ĵ) => []uint8([196 181])
+rune(310) => int32(310), string(310) => string(Ķ), []bytes(Ķ) => []uint8([196 182])
+rune(311) => int32(311), string(311) => string(ķ), []bytes(ķ) => []uint8([196 183])
+rune(312) => int32(312), string(312) => string(ĸ), []bytes(ĸ) => []uint8([196 184])
+rune(313) => int32(313), string(313) => string(Ĺ), []bytes(Ĺ) => []uint8([196 185])
+rune(314) => int32(314), string(314) => string(ĺ), []bytes(ĺ) => []uint8([196 186])
+rune(315) => int32(315), string(315) => string(Ļ), []bytes(Ļ) => []uint8([196 187])
+rune(316) => int32(316), string(316) => string(ļ), []bytes(ļ) => []uint8([196 188])
+rune(317) => int32(317), string(317) => string(Ľ), []bytes(Ľ) => []uint8([196 189])
+rune(318) => int32(318), string(318) => string(ľ), []bytes(ľ) => []uint8([196 190])
+rune(319) => int32(319), string(319) => string(Ŀ), []bytes(Ŀ) => []uint8([196 191])
+rune(320) => int32(320), string(320) => string(ŀ), []bytes(ŀ) => []uint8([197 128])
+rune(321) => int32(321), string(321) => string(Ł), []bytes(Ł) => []uint8([197 129])
+rune(322) => int32(322), string(322) => string(ł), []bytes(ł) => []uint8([197 130])
+rune(323) => int32(323), string(323) => string(Ń), []bytes(Ń) => []uint8([197 131])
+rune(324) => int32(324), string(324) => string(ń), []bytes(ń) => []uint8([197 132])
+rune(325) => int32(325), string(325) => string(Ņ), []bytes(Ņ) => []uint8([197 133])
+rune(326) => int32(326), string(326) => string(ņ), []bytes(ņ) => []uint8([197 134])
+rune(327) => int32(327), string(327) => string(Ň), []bytes(Ň) => []uint8([197 135])
+rune(328) => int32(328), string(328) => string(ň), []bytes(ň) => []uint8([197 136])
+rune(329) => int32(329), string(329) => string(ŉ), []bytes(ŉ) => []uint8([197 137])
+rune(330) => int32(330), string(330) => string(Ŋ), []bytes(Ŋ) => []uint8([197 138])
+rune(331) => int32(331), string(331) => string(ŋ), []bytes(ŋ) => []uint8([197 139])
+rune(332) => int32(332), string(332) => string(Ō), []bytes(Ō) => []uint8([197 140])
+rune(333) => int32(333), string(333) => string(ō), []bytes(ō) => []uint8([197 141])
+rune(334) => int32(334), string(334) => string(Ŏ), []bytes(Ŏ) => []uint8([197 142])
+rune(335) => int32(335), string(335) => string(ŏ), []bytes(ŏ) => []uint8([197 143])
+rune(336) => int32(336), string(336) => string(Ő), []bytes(Ő) => []uint8([197 144])
+rune(337) => int32(337), string(337) => string(ő), []bytes(ő) => []uint8([197 145])
+rune(338) => int32(338), string(338) => string(Œ), []bytes(Œ) => []uint8([197 146])
+rune(339) => int32(339), string(339) => string(œ), []bytes(œ) => []uint8([197 147])
+rune(340) => int32(340), string(340) => string(Ŕ), []bytes(Ŕ) => []uint8([197 148])
+foo => string(a)
+buz => int32(97)
+
+NOTE:
+Some operating systems (Windows) might not print characters where i < 256
+If you have this issue, you can use this code:
+fmt.Println(i, " - ", string(i), " - ", []int32(string(i)))
+UTF-8 is the text coding scheme used by Go.
+UTF-8 works with 1 - 4 bytes.
+A byte is 8 bits.
+[]byte deals with bytes, that is, only 1 byte (8 bits) at a time.
+[]int32 allows us to store the value of 4 bytes, that is, 4 bytes * 8 bits per byte = 32 bits.
+*/
