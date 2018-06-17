@@ -6,8 +6,10 @@ func main() {
 	for i := 250; i <= 340; i++ {
 		iRune := rune(i)
 		iStr := string(i)
+		iRunes := []rune(iStr)
 		iBytes := []byte(iStr)
-		fmt.Printf("rune(%v) => %T(%v), string(%v) => %T(%v), []bytes(%v) => %T(%v)\n", i, iRune, iRune, i, iStr, iStr, iStr, iBytes, iBytes)
+		fmt.Printf("rune(%v) => %T(%v), string(%v) => %T(%v), ", i, iRune, iRune, i, iStr, iStr)
+		fmt.Printf("[]rune(%v) => %T(%v), []bytes(%v) => %T(%v)\n", iStr, iRunes, iRunes, iStr, iBytes, iBytes)
 	}
 	foo := "a"
 	fmt.Printf("foo => %T(%v)\n", foo, foo)
