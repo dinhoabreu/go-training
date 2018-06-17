@@ -14,3 +14,4 @@ Training for [Golang](https://golang.org/) with [Todd McLeod](https://www.udemy.
 - [Twitter](https://twitter.com/Todd_McLeod)
 
 [Search for Go Packages](https://godoc.org)
+[Visualizing Concurrency in Go](http://divan.github.io/posts/go_concurrency_visualize/)
