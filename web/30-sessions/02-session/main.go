@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
-	"os"
 
+	"github.com/dinhoabreu/go-training/web"
 	"github.com/satori/go.uuid"
 )
 
@@ -23,22 +22,11 @@ func init() {
 	tpl = template.Must(template.ParseGlob("templates/*"))
 }
 
-func getEnv(key, defaultValue string) string {
-	if value, ok := os.LookupEnv(key); ok {
-		return value
-	}
-	return defaultValue
-}
-
 func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/bar", bar)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
-	port := getEnv("PORT", "8080")
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	util.ServeHTTP()
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
