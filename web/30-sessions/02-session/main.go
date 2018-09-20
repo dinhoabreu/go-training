@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/dinhoabreu/go-training/web"
+	"github.com/gobuffalo/packr"
 	"github.com/satori/go.uuid"
 )
 
@@ -17,9 +18,18 @@ type user struct {
 var tpl *template.Template
 var dbUsers = map[string]user{}      // user ID, user
 var dbSessions = map[string]string{} // session ID, user ID
+var box packr.Box
 
 func init() {
-	tpl = template.Must(template.ParseGlob("templates/*"))
+	box = packr.NewBox("./templates")
+	for _, item := range box.List() {
+		if tpl == nil {
+			tpl = template.New(item)
+		} else {
+			tpl = tpl.New(item)
+		}
+		tpl.Parse(box.String(item))
+	}
 }
 
 func main() {
